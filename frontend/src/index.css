@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #262525;
+  color: #D4C6C6;
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 60px 1fr 300px;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  padding: 10px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  background-color: #262525;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: #D4C6C6;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.map {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  height: auto;
+}
+
+.rainfall {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: #1D1D1D;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(30, 31, 32, 0.3); /* Removed blue border */
+  position: relative;
+  height: min-content;
+}
+
+.rainfall h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #D4C6C6;
+}
+
+.rainfall h1 {
+  margin: 5px 0;
+  font-size: 48px;
+  color: #D4C6C6;
+}
+
+.rainfall span {
+  font-size: 18px;
+  color: #ff4444;
+}
+
+.rainfall .labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  background-color: #1D1D1D;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.rainfall .labels div {
+  margin: 0;
+  font-size: 14px;
+  color: #D4C6C6;
+}
+
+.rainfall .labels .top-right {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.rainfall canvas {
+  width: 100% !important;
+  height: 150px !important;
+  margin-top: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.rainfall .chart-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #D4C6C6;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.rainfall .chart-labels div {
+  flex: 1;
+  text-align: center;
+}
+
+.weather-stats {
+  grid-column: 3;
+  grid-row: 2;
+  background-color: #1D1D1D;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: min-content;
+}
+
+.weather-stats div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #D4C6C6;
+}
+
+.weather-stats span {
+  color: #D4C6C6;
+}
+
+.weather-stats canvas {
+  width: 100%;
+  height: 50px;
+  
+  overflow: auto;
+}
+
+/* Styling trend line labels with solid colors */
+.weather-stats .trend-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #D4C6C6;
+  margin-top: 5px;
+}
+
+.weather-stats .trend-labels div {
+  flex: 1;
+  text-align: center;
+  background-color: #333; /* Solid background */
+}
+
+.weather-stats .trend-labels .temp-label { color: #ff9900; } /* Orange for Temperature */
+.weather-stats .trend-labels .humid-label { color: #00ccff; } /* Cyan for Humidity */
+.weather-stats .trend-labels .bar-label { color: #00ff00; } /* Green for Bar */
+.weather-stats .trend-labels .wind-label { color: #ff3333; } /* Red for Wind Speed */
+
+canvas {
+  background-color: transparent;
+}
